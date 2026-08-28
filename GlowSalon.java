@@ -1,6 +1,6 @@
 public class GlowSalon {
 
-    // Method 1: Calculate the discounted subtotal
+    //  Calculate the discounted subtotal
     public static double calculateSubtotal(int index, double price, int quantity) {
 
         double subtotal = price * quantity;
@@ -23,7 +23,7 @@ public class GlowSalon {
         return subtotal;
     }
 
-    // method 2: Get the discount Message
+    //  Get the discount Message
     public static String getDiscountMessage(int index, int quantity) {
 
         if (index == 0 && quantity >= 3) {
@@ -41,7 +41,7 @@ public class GlowSalon {
         return "no discount";
     }
 
-    // Method 3: Print the receipt
+    //  Print the receipt
     public static void printReceipt(String[] items, double[] prices, int[] quantities) {
 
         double grandTotal = 0;
