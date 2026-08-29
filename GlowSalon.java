@@ -41,24 +41,22 @@ public class GlowSalon {
         return "no discount";
     }
 
-    //  Print the receipt
+    // Print the receipt
     public static void printReceipt(String[] items, double[] prices, int[] quantities) {
 
         double grandTotal = 0;
 
-        System.out.println("===== GLOW SALON =====");
-        System.out.println();
+        System.out.println("===== GLOW SALON =====\n");
         System.out.println("PRICE LIST");
 
-        // Display price list using a loop
         for (int i = 0; i < items.length; i++) {
-            System.out.printf("%-12s UGX %.2f%n", items[i], prices[i]);
+            System.out.printf("%-12s UGX %.2f%n",
+                    items[i],
+                    prices[i]);
         }
 
-        System.out.println();
-        System.out.println("===== RECEIPT =====");
+        System.out.println("\n===== RECEIPT =====");
 
-        // Calculate and display each item
         for (int i = 0; i < items.length; i++) {
 
             double subtotal = calculateSubtotal(
@@ -66,9 +64,10 @@ public class GlowSalon {
                     prices[i],
                     quantities[i]);
 
-            grandTotal = grandTotal + subtotal;
+            grandTotal += subtotal;
 
-            String discountMessage = getDiscountMessage(i, quantities[i]);
+            String discountMessage =
+                    getDiscountMessage(i, quantities[i]);
 
             System.out.printf(
                     "%-12s x%d = UGX %.2f (%s)%n",
@@ -77,6 +76,7 @@ public class GlowSalon {
                     subtotal,
                     discountMessage);
         }
+
         System.out.println("----------------------------");
         System.out.printf("TOTAL = UGX %.2f%n", grandTotal);
     }
